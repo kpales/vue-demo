@@ -1,13 +1,43 @@
 <template>
   <div>
-    <div class="container">
-      <user-list></user-list>
-    </div>
-    <footer class="footer">
+    <section class="hero is-primary is-bold is-small">
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            Vue powered
+          </h1>
+          <h2 class="subtitle">
+            A demo app using 
+            <em><a class="" title="jsonplaceholder" :href="links.jsonplaceholder" target="_blank">jsonplaceholder</a></em> 
+            to show the power of 
+            <em><a class="" :href="links.vue" title="Vue" target="_blank">Vue</a></em>!
+          </h2>
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container">
+            <ul>
+              <router-link to="/" tag="li" exact><a>Home</a></router-link>
+              <router-link to="/users" tag="li"><a>Users</a></router-link>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <section class="section is-small columns is-marginless">
+      <div class="column">
+        <router-view></router-view>
+      </div>
+    </section>
+    <section class="footer">
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            Tutorial by <strong>Tiago Dias</strong> to demonstrate the power of <strong><a href="http://vuejs.org">Vue</a></strong>
+            Built by <strong>Tiago Dias</strong>
           </p>
         </div>
       </div>
@@ -17,23 +47,32 @@
 
 <script>
   import UserList from './components/user/userList.vue'
-  import {load} from 'vue-google-maps'
+  import {
+    load
+  } from 'vue-google-maps'
 
   load({
-      'key': 'AIzaSyAkMm-OZuHfFAJQhEuETvsOhiNtizJHRzo'
+    'key': 'AIzaSyAkMm-OZuHfFAJQhEuETvsOhiNtizJHRzo'
   });
 
   export default {
     name: 'app',
-    data () {
-      return {}
+    data() {
+      return {
+        links: {
+          jsonplaceholder: "https://jsonplaceholder.typicode.com/",
+          vue: 'https://vuejs.org'
+        } 
+      }
     },
     components: {
       UserList
     }
   }
+
 </script>
 
 <style>
+
 
 </style>

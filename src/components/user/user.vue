@@ -4,7 +4,7 @@
       {{user.id}}
     </td>
     <td>
-      <router-link :to="{ name: 'user', params: { userId: user.id, user: user }}">
+      <router-link v-if="user" :to="{ name: 'quickPeek', params: { userId: user.id, user: user }}">
         {{user.name}}
       </router-link>
     </td>
