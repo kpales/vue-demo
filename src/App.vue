@@ -41,7 +41,7 @@
           </p>
         </div>
       </div>
-    </footer>
+    </section>
   </div>
 </template>
 
