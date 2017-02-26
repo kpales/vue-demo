@@ -64,9 +64,6 @@
           githubRepo: 'https://github.com/tiagojpdias/vue-demo'
         } 
       }
-    },
-    components: {
-      UserList
     }
   }
 
