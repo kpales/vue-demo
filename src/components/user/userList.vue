@@ -34,12 +34,14 @@
               </tr>
             </thead>
             <tbody>
-              <user :user="user" v-for="user in filteredUsers"></user>
+              <user :user="user" :key="user" v-for="user in filteredUsers"></user>
             </tbody>
           </table>
         </div>
         <div class="column is-one-third-desktop">
-          <router-view></router-view>
+          <transition mode="out-in" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+            <router-view></router-view>
+          </transition>
         </div>
       </div>
     </section>
@@ -89,7 +91,7 @@
           data
         }) => {
           this.users = data
-          this.loading = false 
+          this.loading = false
         })
         .catch(e => {
           console.log(e)

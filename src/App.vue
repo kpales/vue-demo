@@ -8,9 +8,8 @@
             Vue powered
           </h1>
           <h2 class="subtitle">
-            A demo app using 
-            <em><a class="" title="jsonplaceholder" :href="links.jsonplaceholder" target="_blank">jsonplaceholder</a></em> 
-            to show the power of 
+            A demo app using
+            <em><a class="" title="jsonplaceholder" :href="links.jsonplaceholder" target="_blank">jsonplaceholder</a></em>            to show the power of
             <em><a class="" :href="links.vue" title="Vue" target="_blank">Vue</a></em>!
           </h2>
         </div>
@@ -30,7 +29,9 @@
     </section>
     <section class="section is-small columns is-marginless">
       <div class="column">
-        <router-view></router-view>
+        <transition mode="out-in" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+          <router-view></router-view>
+        </transition>
       </div>
     </section>
     <section class="footer">
@@ -62,14 +63,9 @@
           jsonplaceholder: "https://jsonplaceholder.typicode.com/",
           vue: 'https://vuejs.org',
           githubRepo: 'https://github.com/tiagojpdias/vue-demo'
-        } 
+        }
       }
     }
   }
 
 </script>
-
-<style>
-
-
-</style>

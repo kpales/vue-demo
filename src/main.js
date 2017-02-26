@@ -5,12 +5,11 @@ import routes from './routes'
 
 
 const router = new VueRouter({
-	routes, // short for routes: routes
+  routes, // short for routes: routes
   linkActiveClass: 'is-active'
 })
 
 Vue.use(VueRouter)
-
 
 new Vue({
   el: '#app',

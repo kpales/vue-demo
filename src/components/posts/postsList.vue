@@ -14,7 +14,10 @@
     </section>
     <section class="section">
       <div class="container">
-        <post v-for="post in posts" :post="post"></post>
+        <transition-group enter-active-class="animated zoomIn">
+          <post v-for="post in posts" v-bind:key="post" :post="post"></post>
+        </transition-group>
+        
       </div>
     </section>
   </div>
@@ -44,7 +47,7 @@
         .then(({
           data
         }) => {
-          this.posts = data
+          this.posts = data;
           this.loading = false
         })
         .catch(e => {
