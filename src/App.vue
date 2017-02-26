@@ -37,7 +37,7 @@
       <div class="container">
         <div class="content has-text-centered">
           <p>
-            Built by <strong>Tiago Dias</strong>
+            Built by <strong>Tiago Dias</strong> - <a :href="links.githubRepo" target="_blank">{{links.githubRepo}}</a>
           </p>
         </div>
       </div>
@@ -46,7 +46,6 @@
 </template>
 
 <script>
-  import UserList from './components/user/userList.vue'
   import {
     load
   } from 'vue-google-maps'
@@ -61,7 +60,8 @@
       return {
         links: {
           jsonplaceholder: "https://jsonplaceholder.typicode.com/",
-          vue: 'https://vuejs.org'
+          vue: 'https://vuejs.org',
+          githubRepo: 'https://github.com/tiagojpdias/vue-demo'
         } 
       }
     },
