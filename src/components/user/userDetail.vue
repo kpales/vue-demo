@@ -81,7 +81,7 @@
     },
     watch: {
       // call again the method if the route changes
-      '$route': 'getUser'
+      //'$route': 'getUser'
     },
     created() {
       this.getUser()
